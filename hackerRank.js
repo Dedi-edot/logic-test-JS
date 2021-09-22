@@ -447,3 +447,280 @@
 // let arr3 = [1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4];
 
 // console.log(migratoryBirds(arr3));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// function solve(year) {
+//   if (year == 1918) return "26.09.1918";
+//   else if (
+//     (year <= 1917 && year % 4 == 0) ||
+//     year % 400 == 0 ||
+//     (year % 4 == 0) & (year % 100 != 0)
+//   )
+//     return "12.09." + year;
+//   else return "13.09." + year;
+// }
+
+// console.log(solve(2006));
+
+/////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////
+
+// let arrBill = [3, 10, 2, 9];
+// let exclude = 1;
+// let billCharged = 12;
+
+// function bonAppetit(bill, k, b) {
+//   // Write your code here
+//   let billActual = 0;
+//   for (let i = 0; i < bill.length; i++) {
+//     if (bill[i] == bill[k]) {
+//       billActual += 0;
+//     } else {
+//       billActual += bill[i];
+//     }
+//   }
+
+//   if (b - billActual / 2 == 0) {
+//     console.log("Bon Appetit");
+//   } else {
+//     console.log(b - billActual / 2);
+//   }
+// }
+
+// function bonAppetit(bill, k, b) {
+//   const sum = bill.reduce((r, v) => r + v, 0);
+//   const result = (sum - bill[k]) / 2;
+//   if (b - result === 0) console.log("Bon Appetit");
+//   else console.log(b - result);
+// }
+
+// bonAppetit([3, 10, 2, 9], 1, 7);
+
+///////////////////////////////////////////////////////////////////////////
+// function sockMerchant(nn, arr) {
+//   // Write your code here
+// let socksCount = {}
+// let sum=0
+// for(let x of ar)
+// {
+//   if(socksCount[x])
+//   {
+//       socksCount[x]+=1
+//   }
+//   else
+//   {
+//       socksCount[x]=1
+//   }
+
+//   if(socksCount[x]%2==0)
+//   {
+//     sum+=1
+//   }
+// }
+
+// return sum
+// }
+
+// let ar = [10, 20, 20, 10, 10, 30, 50, 10, 20]
+// let n = 9
+
+// console.log(sockMerchant(n, ar));
+
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+// function pageCount(n, p) {
+//   // Write your code here
+//   let length = (n+1) / 2;
+//   let countA = 0;
+//   let countB = 0;
+//   let page = [];
+//   for (let i = 0; i < length; i++) {
+//     if (i == 0) {
+//       page[i] = [1]
+//     } else {
+//       page[i] = [(i*2), (i*2+1)]
+//     }
+//   }
+//   console.log(page);
+
+//   for (let j = 0; j < length + 1; j++) {
+//     if (page[j].includes(p)) {
+//       break;
+//     } else {
+//       countA += 1;
+//     }
+//   }
+//   console.log(countA);
+
+//   for (let k = (length -1); k >= 0; k--) {
+//     if (page[k].includes(p)) {
+//       break;
+//     } else {
+//       countB += 1;
+//     }
+//   }
+//   console.log(countB);
+
+//   if (countA < countB) {
+//     console.log(countA);
+//   } else {
+//     console.log(countB);
+//   }
+// }
+
+
+
+// function pageCount(n, p) {
+//   var frontFlip = Math.floor(p/2);
+//   var backFlip = Math.floor((n/2)-frontFlip);
+//   console.log(frontFlip);
+//   console.log(backFlip);
+  
+//   var result = Math.min(frontFlip, backFlip);
+//   console.log(result);;
+
+
+// }
+
+// pageCount(8, 4);
+
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+// function jumpingOnClouds(c) {
+//   // Write your code here
+//   let step1 = 0;
+//   let step2 = []
+  
+
+//   for (let j = 1; j < c.length; j++) {
+//     if (c[j] == 0 ) {
+//       step1 += 1
+//     }
+//   }
+ 
+//   for (let i = 0; i < c.length; i += 2){
+//     if (i + 2 < c.length && c[i + 2] == 0) {
+//       step2.push(c[i+2]);
+//     }
+//   }
+//   console.log(step1);
+//   console.log(step2.length);
+// }
+
+// let b = [0, 1, 0, 0, 0, 1, 0];
+// let a = [0, 0, 0, 1, 0, 0];
+
+// function jumpingOnClouds(c) {
+// var stepsArray = [];
+   
+//     let i=0;
+//     while(i < c.length - 1){
+       
+//         if ((i+2<c.length) && (c[i+2] === 0)) {
+//             stepsArray.push(c[i + 2]);
+//             i+=2;
+//         } else{
+//             stepsArray.push(c[i + 1]);
+//             i+=1;
+//         } 
+        
+//     }
+//     return stepsArray.length
+//   }
+
+// console.log(jumpingOnClouds(a));
+
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+
+// function simpleArraySum(ar) {
+//   // Write your code here
+//   let sum = 0;
+//   for (let i = 0; i < ar.length; i++){
+//     sum += ar[i]
+//   }
+//   console.log(sum);
+// }
+
+// let arr = [1, 2, 3, 4, 10, 11];
+
+// simpleArraySum(arr)
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// function repeatedString(s, n) {
+//   // Write your code here
+//   const as = s.split("").filter(c => c === "a").length;
+//       const times = parseInt(n / s.length);
+//       const rest = n % s.length;
+
+//       const totalAs = times * as
+//           + s.slice(0, rest).split("").filter(c => c === "a").length
+
+//       return totalAs; 
+// }
+
+// console.log(repeatedString("aba", 10));
+
+// function countingValleys(steps, path) {
+//     // Write your code here
+//     let pathSplit = path.split("");
+//     let valleyStat = false;
+//     let valleyCount = 0;
+//     let seaLevel = 0;
+
+//     pathSplit.forEach(val => {
+//         val == 'U' ? seaLevel++ : seaLevel--;
+//         if (seaLevel < 0 && !valleyStat) {
+//             // valleyStat = true;
+//             valleyCount++;
+//             valleyStat = true;
+//         } else if (seaLevel >= 0 && valleyStat) {
+//             valleyStat = false;
+//         }
+//     });
+
+//     console.log(valleyCount);
+
+// }
+
+// let paths = "DDUUDDUDUUUD";
+
+// countingValleys(8, paths)
+
+/////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+function hourglassSum(arr) {
+    // Write your code here
+    let sum = [];
+    for (let i = 0; i < arr.length -2; i++) {
+        for (let j = 0; j < arr.length -2; j++) {
+            let count = arr[i][j] + arr[i][j+1] + arr[i][j+2] + arr[i+1][j+1] + arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2]
+            sum.push(count);
+        }
+    }
+    console.log(sum);
+    console.log(Math.max(...sum));
+}
+
+let array = [
+    [1, 1, 1, 0, 0, 0],
+    [0, 1, 0, 0, 0, 0],
+    [1, 1, 1, 0, 0, 0],
+    [0, 0, 2, 4, 4, 0],
+    [0, 0, 0, 2, 0, 0],
+    [0, 0, 1, 2, 4, 0]
+    ];
+
+hourglassSum(array);
+
+
+// console.log(array[0][0], array[0][1], array[0][2]);
+// console.log(array[1][1]);
+// console.log(array[2][0], array[2][1], array[2][2]);
+
+
